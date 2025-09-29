@@ -23,7 +23,7 @@ export class RandomComponent {
   }
 
   onButtonClick(): void {
-   while (this.intChosen !== this.randomInt && this.tryCount < this.maxtry) {
+   while (this.intChosen !== this.randomInt && this.tryCount + 1 < this.maxtry) {
       this.tryCount++;
       if (this.intChosen < this.randomInt) {
         this.message = 'Trop petit !';
@@ -32,10 +32,10 @@ export class RandomComponent {
       }
       return;
     }
-    if (this.tryCount >= this.maxtry) {
+    if (this.tryCount + 1 >= this.maxtry) {
       this.message = `Perdu ! Le nombre était ${this.randomInt}.`;
       return;
     }
-    this.message = 'Gagné !';
+    this.message = 'Vous avez gagné en ' + (this.tryCount + 1) + ' essai(s) !';
   }
 }

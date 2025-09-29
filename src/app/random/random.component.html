@@ -1,0 +1,8 @@
+<p>random works!</p>
+
+<div>
+    <input type="number" [(ngModel)]="intChosen" placeholder="Enter your guess" />
+    <button (click)="onButtonClick()">Guess !</button>
+    <p *ngIf="message">{{ message }}</p>
+    <p *ngIf="tryCount > 0">Nombre d'essais: {{ tryCount }}</p>
+</div>
